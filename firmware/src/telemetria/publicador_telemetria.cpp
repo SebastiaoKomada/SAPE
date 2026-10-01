@@ -69,8 +69,6 @@ void PublicadorTelemetria::publicar(optional<int> distancia_mm,
       !cJSON_AddStringToObject(json.get(), "device_id",
                                config::kIdDispositivo) ||
       !adicionarDistancia(json.get(), distancia_mm) ||
-      !cJSON_AddBoolToObject(json.get(), "simulated",
-                             config::kSimularSensor) ||
       !adicionarClima(json.get(), clima) ||
       !cJSON_AddStringToObject(json.get(), "mode", nomeModo(decisao.modo)) ||
       !cJSON_AddNumberToObject(json.get(), "sleep_s",

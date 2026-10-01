@@ -15,7 +15,6 @@ inline constexpr char kIdDispositivo[] = "a02yyuw-001";
 inline constexpr char kTopicoMqtt[] =
     "sape/sensors/a02yyuw-001/telemetry";
 
-inline constexpr bool kSimularSensor = true;
 inline constexpr gpio_num_t kPinoRxSensor = GPIO_NUM_33;
 
 // Com kUsarDeepSleep=false o ciclo se repete a cada kIntervaloEnvio sem
@@ -29,10 +28,10 @@ inline constexpr auto kTimeoutSensor = std::chrono::seconds{3};
 
 // Clima (Open-Meteo). SUBSTITUIR pelas coordenadas reais.
 // Montante: ponto Z, antes da area X no mesmo rio.
-// Local: area X onde o dispositivo esta instalado.
+// local: -22.254030, -45.706181
 inline constexpr char kUrlClima[] = "https://api.open-meteo.com/v1/forecast";
-inline constexpr double kLatitudeMontante = -22.3000;
-inline constexpr double kLongitudeMontante = -45.6500;
+inline constexpr double kLatitudeMontante = -22.36000;
+inline constexpr double kLongitudeMontante = -45.5500;
 inline constexpr double kLatitudeLocal = -22.2500;
 inline constexpr double kLongitudeLocal = -45.7000;
 
