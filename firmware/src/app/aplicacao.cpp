@@ -133,9 +133,6 @@ void Aplicacao::executar() {
   PublicadorTelemetria publicador{conectividade};
   const ClienteClima clima{};
 
-  ESP_LOGI(kTag, "Modo do sensor: %s",
-           config::kSimularSensor ? "simulado" : "A02YYUW");
-
   while (true) {
     const Decisao decisao =
         executarCiclo(*sensor, conectividade, clima, publicador);
