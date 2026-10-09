@@ -1,0 +1,21 @@
+name: sape
+
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: sape
+      POSTGRES_PASSWORD: sape
+      POSTGRES_DB: sape
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sape"]
+      interval: 5s
+      retries: 10
+
+volumes:
+  pgdata:
