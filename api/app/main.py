@@ -7,7 +7,7 @@ from fastapi import FastAPI
 
 from app.config import get_settings
 from app.ingest.subscriber import run_subscriber
-from app.routers import health
+from app.routers import devices, health, measurements
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
 
@@ -26,3 +26,5 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title="SAPE API", lifespan=lifespan)
 app.include_router(health.router, prefix="/api")
+app.include_router(devices.router, prefix="/api")
+app.include_router(measurements.router, prefix="/api")
